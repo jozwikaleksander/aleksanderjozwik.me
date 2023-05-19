@@ -30,7 +30,7 @@ const controls = new OrbitControls( camera, renderer.domElement );
 scene.add(controls.object);
 controls.update();
 
-// Planet function
+// Planet creation function
 const planet = (mat, size, x, y, z) => {
     const geometry = new THREE.IcosahedronGeometry( size, 1 );
     const material = new THREE.MeshBasicMaterial( mat );
@@ -41,18 +41,34 @@ const planet = (mat, size, x, y, z) => {
     return mesh;
 }
 
+// Planet movement
+const movement = (planet, origin, speed, radius, delta, elapsed) => {
+    planet.position.x =  origin.position.x + Math.sin(elapsed*speed) * radius;
+    planet.position.z = origin.position.z + Math.cos(elapsed*speed) * radius;
+    planet.rotation.x += 1 * delta;
+    planet.rotation.y += 1 * delta;
+}
+
 // Sun
 const sun = planet({ map: loader.load('/sun.png') }, 0.5, 0, 0, 0);
 scene.add(sun);
 
-// Earth
-const satelitte = planet({ map: loader.load('/planet.png') }, 0.1, 0, 0, 0);
-scene.add(satelitte);
+// planet_1
+const planet_1 = planet({ map: loader.load('/planet.png') }, 0.1, 0, 0, 0);
+scene.add(planet_1);
+
+// planet_2
+const planet_2 = planet({ map: loader.load('/planet_2.png') }, 0.2, 0, 0, 0);
+scene.add(planet_2);
 
 // Trajectory
 const circle = new THREE.LineSegments(  new THREE.EdgesGeometry( new THREE.CircleGeometry( 2, 48 ) ), new THREE.LineBasicMaterial( { color: 0xcdd6f4 } ) );
 circle.rotation.x = Math.PI/2;
 scene.add( circle );
+
+const circle2 = new THREE.LineSegments(  new THREE.EdgesGeometry( new THREE.CircleGeometry( 1.2, 48 ) ), new THREE.LineBasicMaterial( { color: 0xcdd6f4 } ) );
+circle2.rotation.x = Math.PI/2;
+scene.add( circle2 );
 
 function animate() {
 	requestAnimationFrame( animate );
@@ -65,10 +81,8 @@ function animate() {
     sun.rotation.x += speed;
     sun.rotation.y += speed;
     
-    satelitte.position.x =  sun.position.x + Math.sin(elapsed*1) * 2;
-    satelitte.position.z = sun.position.z + Math.cos(elapsed*1) * 2;
-    satelitte.rotation.x += 1 * delta;
-    satelitte.rotation.y += 1 * delta;
+    movement(planet_1, sun, 1, 2, delta, elapsed);
+    movement(planet_2, sun, 0.5, 1.2, delta, elapsed);
 
 	renderer.render( scene, camera );
 }
