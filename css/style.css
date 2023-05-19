@@ -66,16 +66,17 @@ header{
 }
 h1{
   font-weight:100;
-  letter-spacing: 4px;
+  letter-spacing: 8px;
   user-select: none;
+  font-size: 50px;
 }
 h2{
-  font-weight:300;
+  font-weight:200;
   letter-spacing: 2px;
   user-select: none;
 }
 main{
-  margin-top: 200px;
+  margin-top: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -97,7 +98,7 @@ li::before{
     padding-bottom: 20px;
   }
   main{
-    margin-top: 100px;
+    margin-top: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
