@@ -54,6 +54,7 @@ ul{
 }
 header{
   width: 100%;
+  position: fixed;
   text-align: center;
 }
 h1{

@@ -2,13 +2,13 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Height
-const height = 300;
+const height = 500;
 
 // Setting up the scene, camera, and renderer
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / height, 0.1, 1000 );
-camera.position.z = 3;
-camera.position.y = 1;
+const camera = new THREE.PerspectiveCamera( 60, window.innerWidth / height, 0.1, 1000 );
+camera.position.z = 3.5;
+camera.position.y = 1.5;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true});
 renderer.setPixelRatio( window.devicePixelRatio );
