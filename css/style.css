@@ -31,7 +31,7 @@
 
   line-height: 1.5;
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: 1em;
   color: var(--font-color);
   background-color: var(--darkbackground-color);
   scroll-behavior: smooth;
@@ -41,6 +41,7 @@ body{
   padding:0;
 }
 a{
+  font-size: 0.9em;
   color: var(--font-color);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
@@ -61,11 +62,12 @@ h1{
   font-weight:100;
   letter-spacing: 8px;
   user-select: none;
-  font-size: 50px;
+  font-size: 2.5em;
 }
 h2{
   font-weight:200;
-  letter-spacing: 2px;
+  font-size: 1.5em;
+  letter-spacing:0.2em;
   user-select: none;
 }
 main{
@@ -86,7 +88,7 @@ li::before{
 #container{
   overflow: hidden;
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 900px) {
   main{
     display: flex;
     flex-direction: column;
