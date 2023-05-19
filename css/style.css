@@ -36,17 +36,9 @@
   background-color: var(--background-color);
   scroll-behavior: smooth;
 }
-/* Body */
-body {
-  margin: 0 auto;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
+body{
+  margin:0;
+  padding:0;
 }
 a{
   color: var(--font-color);
@@ -76,10 +68,10 @@ h2{
   user-select: none;
 }
 main{
-  margin-top: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: var(--background-color);
 }
 section{
   margin: 0 20px;
@@ -90,15 +82,11 @@ li::before{
   display: inline-block;
   margin-right:10px;  
 }
-@media (max-width: 900px) {
-  body {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+#container{
+  overflow: hidden;
+}
+@media only screen and (max-width: 980px) {
   main{
-    margin-top: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
