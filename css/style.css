@@ -57,6 +57,7 @@ ul{
 }
 .header{
   width: 100%;
+  height:120px;
   display: block;
   text-align: center;
   background-color: var(--darkbackground-color);
@@ -86,7 +87,7 @@ section{
 #container{
   overflow: hidden;
   position: relative;
-  /* bottom:80px; */
+  bottom:60px;
 }
 @media only screen and (max-width: 900px) {
   main{
