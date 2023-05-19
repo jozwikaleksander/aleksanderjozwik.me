@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Height
-const height = 500;
+const height = window.innerHeight/2;
 
 // Setting up the scene, camera, and renderer
 const scene = new THREE.Scene();
