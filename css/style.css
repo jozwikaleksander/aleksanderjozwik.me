@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
 /* Root */
 :root {
@@ -16,7 +16,7 @@
   --cyan-color: #94e2d5;
   --lightblue-color: #89dceb;
   --figcaption-color: #bac2de;
-  --font-family: "Roboto", monospace;
+  --font-family: "Montserrat", monospace;
   --scrollbar-track: var(--foreground-color);
   --scrollbar-thumb: var(--blue-color);
   --scrollbar-thumb-hover: var(--lightblue-color);
@@ -31,17 +31,19 @@
 
   line-height: 1.5;
   font-family: var(--font-family);
-  font-size: 1em;
+  font-size: 16px;
   color: var(--font-color);
   background-color: var(--darkbackground-color);
   scroll-behavior: smooth;
+  font-weight: 300;
 }
 body{
   margin:0;
   padding:0;
 }
 a{
-  font-size: 0.9em;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
   color: var(--font-color);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
@@ -51,7 +53,7 @@ a:focus{
   color: var(--orange-color);
 }
 ul{
-  list-style-type: none;
+  list-style-type: circle;
 }
 header{
   width: 100%;
@@ -65,9 +67,9 @@ h1{
   font-size: 2.5em;
 }
 h2{
-  font-weight:200;
+  font: weight 400;
   font-size: 1.5em;
-  letter-spacing:0.2em;
+  letter-spacing:0.5em;
   user-select: none;
 }
 main{
@@ -78,12 +80,6 @@ main{
 }
 section{
   margin: 0 20px;
-}
-li::before{
-  content: "◦";
-  color: var(--green-color);
-  display: inline-block;
-  margin-right:10px;  
 }
 #container{
   overflow: hidden;
