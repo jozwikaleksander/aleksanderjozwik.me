@@ -55,10 +55,11 @@ a:focus{
 ul{
   list-style-type: circle;
 }
-header{
+.header{
   width: 100%;
-  position: fixed;
+  display: block;
   text-align: center;
+  background-color: var(--darkbackground-color);
 }
 h1{
   font-weight:100;
@@ -84,6 +85,8 @@ section{
 }
 #container{
   overflow: hidden;
+  position: relative;
+  /* bottom:80px; */
 }
 @media only screen and (max-width: 900px) {
   main{

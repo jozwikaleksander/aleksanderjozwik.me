@@ -27,6 +27,10 @@ const loader = new THREE.TextureLoader();
 
 // Adding the orbit controls
 const controls = new OrbitControls( camera, renderer.domElement );
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.enablePan = false;
+controls.enableZoom = false;
 scene.add(controls.object);
 controls.update();
 
