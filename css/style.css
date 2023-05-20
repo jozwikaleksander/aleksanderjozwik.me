@@ -58,6 +58,7 @@ a:focus{
 }
 ul{
   list-style-type: circle;
+  padding-left:30px;
 }
 .header{
   width: 100%;
@@ -73,10 +74,11 @@ h1{
 }
 h2{
   font: weight 400;
-  font-size: 1.5em;
+  font-size: 1.8em;
   letter-spacing:0.2em;
   user-select: none;
   color: var(--yellow-color);
+  margin-bottom: 20px;
 }
 main{
   display: flex;
@@ -95,6 +97,9 @@ canvas{
   bottom: 50px;
 }
 @media only screen and (max-width: 900px) {
+  body{
+    padding-bottom: 20px;
+  }
   main{
     display: flex;
     flex-direction: column;
