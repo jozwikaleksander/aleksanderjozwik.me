@@ -1,124 +1,256 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
-*{
-  margin:0;
-  padding:0;
+/* Root Variables */
+:root {
+  /* Colors */
+  --background-color: #11111b;
+  --text-color: #ddd;
+  --main-bg-color: #121212;
+  --border-color: white;
+  --hover-text-color: white;
+
+  /* Button Colors */
+  --btn-bg-color-1: #eba0ac;
+  --btn-bg-color-2: #94e2d5;
+  --btn-bg-color-3: #fab387;
+  --btn-bg-color-4: #cba6f7;
+  --btn-border-color-4: #cba6f7;
+  
+  /* Typography */
+  --font-family: ibm, monospace;
+
+  /* Layout */
+  --border-radius: 0;
+  --main-height: 100px;
+  --shadow-height: 100px;
+  --shadow-offset-x: 10px;
+  --shadow-offset-y: -10px;
+  --topbar-height: 30px;
+  
+  /* Spacing */
+  --padding-small: 10px;
+  --padding-large: 20px;
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
 }
-/* Root */
-:root {
-  /* Settings */
-  --green-color: #a6e3a1;
-  --foreground-color: #313244;
-  --background-color: #1e1e2e;
-  --darkbackground-color: #181825;
-  --font-color: #cdd6f4;
-  --magenta-color: #cba6f7;
-  --red-color: #f38ba8;
-  --yellow-color: #f9e2af;
-  --orange-color: #fab387;
-  --blue-color: #89b4fa;
-  --cyan-color: #94e2d5;
-  --lightblue-color: #89dceb;
-  --figcaption-color: #bac2de;
-  --font-family: "Montserrat", monospace;
-  --scrollbar-track: var(--foreground-color);
-  --scrollbar-thumb: var(--blue-color);
-  --scrollbar-thumb-hover: var(--lightblue-color);
-  --transition: all 0.3s ease-in-out;
-  --shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.2);
-  --header-1-color: var(--green-color);
-  --header-2-color: var(--blue-color);
-  --header-3-color: var(--lightblue-color);
-  --header-4-color: var(--yellow-color);
-  --header-5-color: var(--cyan-color);
-  /* ------------------------- */
 
-  line-height: 1.5;
+/* Font Face */
+@font-face {
+  font-family: 'ibm';
+  src: url('../fonts/3270NerdFont-Regular.ttf');
+}
+
+/* Body Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: var(--font-family);
-  font-size: 16px;
-  color: var(--font-color);
-  background-color: var(--darkbackground-color);
-  scroll-behavior: smooth;
-  font-weight: 300;
-}
-body{
-  margin:0;
-  padding:0;
-}
-a{
-  font-size: 1.5em;
-  letter-spacing: 0.1em;
-  color: var(--font-color);
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-a:hover,
-a:focus{
-  color: var(--orange-color);
-}
-ul{
-  list-style-type: circle;
-  padding-left:30px;
-}
-.header{
-  width: 100%;
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-}
-h1{
-  font-weight:100;
-  letter-spacing: 8px;
-  user-select: none;
-  font-size: 2.5em;
-}
-h2{
-  font: weight 400;
-  font-size: 1.8em;
-  letter-spacing:0.2em;
-  user-select: none;
-  color: var(--yellow-color);
-  margin-bottom: 20px;
-}
-main{
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  background-color: var(--darkbackground-color);
-}
-section{
-  margin: 0 20px;
-}
-#container{
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   overflow: hidden;
+  flex-direction: column;
+
+  font-size: 1.2em;
 }
-canvas{
+
+/* Wrapper for Centering Content */
+.wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+/* Main Window Box */
+main {
+  width: fit-content;
+  height: var(--main-height);
+  border: 1px solid var(--border-color);
+  background-color: var(--main-bg-color);
+  border-radius: var(--border-radius);
+  position: relative;
+  z-index: 100;
+}
+
+/* Shadow Box Behind Main Window */
+.shadow {
+  width: 100%;
+  height: var(--shadow-height);
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+  z-index: 99;
+  border: 1px solid var(--border-color);
+  background-size: 1%;
+  image-rendering: pixelated;
+  background-image: url("../cross.png");
+  border-radius: var(--border-radius);
+}
+
+/* Top Bar with Buttons */
+.topbar {
+  height: var(--topbar-height);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Top Bar Buttons */
+.topbar-btns {
+  display: flex;
+}
+
+.topbar-btn {
+  margin: 0 var(--padding-small);
+}
+
+/* Top Bar Title */
+.topbar-title {
+  padding: var(--padding-small);
+  margin-left: 4px;
   position:relative;
-  bottom: 50px;
+  bottom:4px;
 }
-@media only screen and (max-width: 900px) {
+
+/* Window Body */
+.window-body {
+  padding: var(--padding-small);
+}
+
+/* Window Buttons */
+.window-btns {
+  display: flex;
+}
+
+/* Individual Window Button Styles */
+.window-btn {
+  display: block;
+  padding: var(--padding-small);
+  width: fit-content;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: var(--padding-small);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--btn-bg-color-4);
+  border: 3px solid var(--btn-border-color-4);
+  color: var(--main-bg-color);
+}
+
+/* Specific Window Button Styles */
+.window-btn:nth-child(1) {
+  background-color: var(--btn-bg-color-1);
+  border-color: var(--btn-bg-color-1);
+  margin-left: 0;
+}
+
+.window-btn:nth-child(2) {
+  background-color: var(--btn-bg-color-2);
+  border-color: var(--btn-bg-color-2);
+}
+
+.window-btn:nth-child(3) {
+  background-color: var(--btn-bg-color-3);
+  border-color: var(--btn-bg-color-3);
+}
+
+.window-btn:nth-child(4) {
+  padding-right: var(--padding-large);
+}
+
+/* Button Hover Effect */
+.window-btn:hover {
+  background: none;
+  color: var(--hover-text-color);
+}
+
+/* THREE.JS Container */
+#container {
+  z-index: 1;
+  position: absolute;
+  width:100vw;
+  height: 100vh;
+}
+
+@media (max-width: 768px){
+  html{
+    font-size:1.5em
+  }
+
   body{
-    padding-bottom: 20px;
-  }
-  main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  section h2{
-    text-align: center;
-  }
-  ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width:100%;
     align-items: center;
+    justify-content: center;
+  }
+
+  /* Window Buttons */
+  .window-btns{
+    flex-direction: column;
+  }
+  .window-btn{
+    width:100%;
     margin:0;
-    padding: 0;
+    margin-bottom:10px;
+  }
+  .window-btn:last-child{
+    margin:0;
+  }
+
+  /* Main window */
+  main{
+    height: auto;
+    position:relative;
+  }
+
+  /* Topbar */
+  .topbar{
+    height:unset;
+  }
+  .topbar-title{
+    position:static;
+  }
+  /* Topbar buttons */
+  .topbar-btn{
+    display: flex;
+    align-items: center;
+  }
+  /* Topbar button icons - Font Awesome icons */
+  .fa-window-minimize{
+    margin-bottom:20px;
+  }
+  .fa-square{
+    margin-bottom:5px;
+  }
+  .fa-xmark{
+    margin-bottom:5px;
+  }
+
+  /* Shadow behind main window */
+  .shadow{
+    display: block;
+    width: 100%;
+    height: 100%;
+    left:0;
+  }
+  
+}
+@media (max-width:430px){
+  body{
+    padding:10px;
+  }
+  /* Hiding topbar user icon */
+  .topbar-title i{
+    display: none;
   }
 }
