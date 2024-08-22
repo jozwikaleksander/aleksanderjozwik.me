@@ -116,6 +116,7 @@ function init() {
 
     controls = new OrbitControls( camera, renderer.domElement );
 
+    controls.enablePan = false;
     controls.enableZoom = false;
 
     controls.update();

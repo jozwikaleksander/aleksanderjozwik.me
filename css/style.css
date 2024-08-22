@@ -46,7 +46,7 @@ html {
 /* Font Face */
 @font-face {
   font-family: 'ibm';
-  src: url('../fonts/3270NerdFont-Regular.ttf');
+  src: url('../fonts/3270-Regular.ttf');
 }
 
 /* Body Styles */
